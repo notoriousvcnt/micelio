@@ -1,0 +1,27 @@
+INSTRUCCIONES DETALLADAS
+
+1) Montaje de la tarjeta de audio en el sistema
+   Para consultar el procedimiento paso a paso de cómo reconocer los dispositivos USB desde la terminal en Linux, puede revisar el siguiente enlace:
+   https://askubuntu.com/questions/37767/how-to-access-a-usb-flash-drive-from-the-terminal
+
+2) Configuración de salida de audio mediante pines PWM en Raspberry Pi
+   El procedimiento para habilitar audio en los pines PWM está documentado en el siguiente enlace oficial del foro de Raspberry Pi:
+   https://forums.raspberrypi.com/viewtopic.php?t=323459
+
+   a. Edite el archivo de configuración del sistema ubicado en:
+      /boot/firmware/config.txt
+
+   b. Añada la siguiente línea al archivo:
+      dtoverlay=audremap,pins_12_13
+
+3) Identificación del dispositivo de audio con ALSA
+   a. Ejecute el siguiente comando en la terminal:
+      aplay -l
+
+   b. Busque en la salida del comando el número correspondiente al dispositivo y a la tarjeta de sonido que desea utilizar.
+
+4) Modificación del archivo de configuración de ALSA
+   a. Acceda al archivo de configuración global de ALSA ubicado en:
+      /usr/share/alsa/alsa.conf
+
+   b. Sustituya los valores de "device" y "card" por los identificados en el paso anterior.
