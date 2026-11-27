@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# PlatformIO / editores
+.pio/
+.vscode/
+
+# Credenciales locales (usar include/secrets.example.h como plantilla)
+secrets.h
+platformio_secrets.ini
+
+*.log

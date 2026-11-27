@@ -187,8 +187,14 @@ int lightsChangeState = 0;
 bool resetRGB = false;\
 
 /*WiFi Configs*/
-const char *ssid = "SSID";
-const char *password = "PASSWORD";
+// Credenciales: ver include/secrets.example.h (secrets.h no se versiona)
+#if __has_include("secrets.h")
+#include "secrets.h"
+#else
+#include "secrets.example.h"
+#endif
+const char *ssid = WIFI_SSID;
+const char *password = WIFI_PASSWORD;
 
 
 /* Preferences configs */
